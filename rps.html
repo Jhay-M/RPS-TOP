@@ -7,9 +7,12 @@
         return select;
     }
 
+    const computerSelection = computerPlay();
+    let playerSelection = prompt('Rock, Paper or Scissors?');
+    let answer = playerSelection.toLowerCase();
+    let answer2 = computerSelection.toLowerCase();
+
     function playRound(playerSelection, computerSelection) {
-        let answer = playerSelection.toLowerCase();
-        let answer2 = computerSelection.toLowerCase();
 
         if (answer == 'rock' && answer2 == 'scissors') {
             result = 'You Win! Rock beats Scissors';
@@ -28,13 +31,13 @@
         return result;
     }
 
+
     function game() {
+
         for (i = 0; i < 5; i++) {
-            
+
+            playRound();
         }
     }
-
-    const computerSelection = computerPlay();
-    let playerSelection = prompt('Rock, Paper or Scissors?');
 
 </script>
