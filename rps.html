@@ -1,0 +1,40 @@
+<script>
+
+    function computerPlay() {
+        let option = ['Rock', 'Paper', 'Scissors'];
+        let select = option[Math.floor(Math.random() * 3)];
+
+        return select;
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        let answer = playerSelection.toLowerCase();
+        let answer2 = computerSelection.toLowerCase();
+
+        if (answer == 'rock' && answer2 == 'scissors') {
+            result = 'You Win! Rock beats Scissors';
+        } else if (answer == 'scissors' && answer2 == 'rock') {
+            result = 'You Lose! Rock beats Scissors';
+        } else if (answer == 'paper' && answer2 == 'rock') {
+            result = 'You Win! Paper beats Rock';
+        } else if (answer == 'rock' && answer2 == 'paper') {
+            result = 'You Lose! Paper beats Rock';
+        } else if (answer == 'scissors' && answer2 == 'paper') {
+            result = 'You Win! Scissors beats Paper';
+        } else if (answer == 'paper' && answer2 == 'scissors') {
+            result = 'You Lose! Scissors beats Paper';
+        } else result = 'Draw!'
+
+        return result;
+    }
+
+    function game() {
+        for (i = 0; i < 5; i++) {
+            
+        }
+    }
+
+    const computerSelection = computerPlay();
+    let playerSelection = prompt('Rock, Paper or Scissors?');
+
+</script>
