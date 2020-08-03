@@ -13,5 +13,43 @@
     function lowerCase(str) {
         return str.toLowerCase();
     }
-    
+
+    function roundPlay(playerSelection, computerSelection) {
+        let user = lowerCase(playerSelection);
+        let com = lowerCase(computerSelection);
+
+        if ((user == 'rock' && com == 'scissors') || (user == 'paper' && com == 'rock') || (user == 'scissors' && com == 'paper')) {
+            userWin += 1;
+            return `You Win! ${user} beats ${com}`;
+        } else if (user == com) {
+            return 'It\'s a Tie!';
+        } else {
+            comWin += 1;
+            return `You Lose! ${com} beats ${user}`;
+        }
+    }
+
+    function game() {
+        let round = 0;
+        while (round < 5) {
+            let playerSelection = prompt('Rock, Paper or Scissors?');
+            const computerSelection = computerPlay();
+
+            console.log(roundPlay(playerSelection, computerSelection));
+            round++;
+        }
+
+        console.log(whoWins(userWin, comWin));
+    }
+
+    function whoWins(x, y) {
+        if (x > y) {
+            return `You Win! Player: ${userWin}, Computer: ${comWin}, Tie: ${5 - x -y}`;
+        } else if (x < y) {
+            return `You Lose! Player: ${userWin}, Computer: ${comWin}, Tie: ${5 - x -y}`;
+        } else {
+            return `Draw! Player: ${userWin}, Computer: ${comWin}, Tie: ${5 - x -y}`; 
+        }
+    }
+
 </script>
