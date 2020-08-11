@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="rps.css">
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors!</title>
 </head>
 <body>
     <div id=container>
@@ -12,52 +13,5 @@
     </div>
     <div class=results>
     </div>
-    <script>
-
-        let userWin = 0;
-        let comWin = 0;
-        let moves = ['Rock', 'Paper', 'Scissors'];
-
-        function computerPlay() {
-            select = moves[Math.floor(Math.random() * 3)];
-
-            return select;
-        }
-
-        function lowerCase(str) {
-            return String(str).toLowerCase();
-        }
-
-        function roundPlay(pS, cS) {
-            let user = lowerCase(pS);
-            let com = lowerCase(cS);
-
-            if ((user == 'rock' && com == 'scissors') || (user == 'paper' && com == 'rock') || (user == 'scissors' && com == 'paper')) {
-                userWin += 1;
-                return `You Win! ${user} beats ${com}`;
-            } else if (user == com) {
-                return 'It\'s a Tie!';
-            } else {
-                comWin += 1;
-                return `You Lose! ${com} beats ${user}`;
-            }
-        }
-
-        function whoWins(x, y) {
-            if (x > y) {
-                return `You Win! Player: ${userWin}, Computer: ${comWin}, Tie: ${5 - x -y}`;
-            } else if (x < y) {
-                return `You Lose! Player: ${userWin}, Computer: ${comWin}, Tie: ${5 - x -y}`;
-            } else {
-                return `Draw! Player: ${userWin}, Computer: ${comWin}, Tie: ${5 - x -y}`; 
-            }
-        }
-
-        const buttons = document.querySelectorAll('button');
-        const results = document.querySelector('div.results');
-        const para = document.createElement('p');
-        let message;
-
-        
-    </script>
+    <script src="rps.js"></script>
 </body>
